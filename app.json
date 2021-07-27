@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "bloomer",
-    "slug": "bloomer",
+    "name": "bloomerver2",
+    "slug": "bloomerver2",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": ""
   },
   "name": "bloomer"
 }
