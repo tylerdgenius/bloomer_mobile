@@ -1,6 +1,8 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { Text } from "react-native-paper";
+
 
 const Home = ({ navigation }) => {
   return (
@@ -12,7 +14,7 @@ const Home = ({ navigation }) => {
     >
       <View
         style={{
-          backgroundColor: "#00a46c",
+          backgroundColor: "#8ac546",
           height: "28%",
           borderBottomLeftRadius: 20,
           borderBottomRightRadius: 20,
@@ -58,6 +60,72 @@ const Home = ({ navigation }) => {
               source={require("../images/g.png")}
               style={{ height: 60, width: 60 }}
             />
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={{
+            alignItems: "flex-start",
+            paddingLeft: 30,
+            marginHorizontal: 30,
+            paddingVertical: 20,
+            backgroundColor: "#e90388",
+            marginTop: 50,
+            elevation: 40,
+            borderRadius: 20,
+          }}
+        >
+          <View style={{}}>
+            <Text style={{ fontSize: 35, color: "white", fontWeight: "bold" }}>
+              Recent Vaccinations
+            </Text>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text
+                style={{ fontSize: 120, color: "white", fontWeight: "bold" }}
+              >
+                01
+              </Text>
+              <View>
+                <Text style={{ fontSize: 25, color: "white" }}>
+                  Vaccinations
+                </Text>
+                <Text style={{ fontSize: 25, color: "white" }}>Completed</Text>
+              </View>
+            </View>
+          </View>
+          <View>
+            <Text style={{ fontSize: 20, color: "white", paddingRight: 20 }}>
+              Your baby received <Text>Baby Vaccinations </Text> on the
+              <Text>12th of June</Text>
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={{
+          alignItems: "flex-start",
+          marginHorizontal: 30,
+          backgroundColor: "#8ac546",
+          marginTop: 50,
+          elevation: 40,
+          borderRadius: 20,
+          paddingHorizontal: 30,
+          paddingVertical: 30,
+        }}
+      >
+        <View style={{ flexDirection: "row" }}>
+          <Text>Schedule A Vaccination </Text>
+          <View>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "white",
+                borderRadius: 20,
+                elevation: 20,
+              }}
+            >
+              <Text style={{ color: "#e90388", paddingHorizontal: 20, paddingVertical: 10  }}>Book Now</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>

@@ -1,20 +1,31 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-// import Home from "../screens/Home";
 import Flat from "../components/Flat";
 import Register from "../screens/Register";
-// import Login from '../screens/Login'
-// import Profile from '../screens/Profile'
 import { Image } from "react-native";
 import Login from "../screens/Login";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Dashboard from "../screens/Dashboard";
 import Wallet from "../screens/Wallet";
 import Setting from "../screens/Settings";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+const Drawer = createDrawerNavigator();
+const DrawerNavigator = () => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={BottomTabNavigator} />
+      {/* <Drawer.Screen name="Dashboard" component={Dashboard} /> */}
+      {/* <Drawer.Screen name="Login" component={Login} />
+      <Drawer.Screen name="Register" component={Register} /> */}
+      <Drawer.Screen name="Wallet" component={Wallet} />
+      <Drawer.Screen name="Settings" component={Setting} />
+    </Drawer.Navigator>
+  );
+};
 
 const Tab = createBottomTabNavigator();
-const BottomTabNavigator = () => {
+const BottomTabNavigator = ({ navigation }) => {
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -27,9 +38,22 @@ const BottomTabNavigator = () => {
         },
       }}
     >
+      {/* <Tab.Screen
+        name="Drawer"
+        component={DrawerNavigator}
+        options={{
+          tabBarLabel: "",
+          tabBarIcon: ({ color, size }) => (
+            <Image
+              source={require("../images/9.png")}
+              style={{ height: 20, width: 20 }}
+            />
+          ),
+        }}
+      /> */}
       <Tab.Screen
-        name="Login"
-        component={Login}
+        name="Home"
+        component={Flat}
         options={{
           tabBarLabel: "",
           tabBarIcon: ({ color, size }) => (
@@ -41,35 +65,36 @@ const BottomTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Home"
-        component={Flat}
+        name="Wallet"
+        component={Wallet}
         options={{
           tabBarLabel: "",
           tabBarIcon: ({ color, size }) => (
             <Image
-              source={require("../images/8.png")}
+              source={require("../images/9.png")}
               style={{ height: 20, width: 20 }}
             />
           ),
         }}
       />
-
       <Tab.Screen
-        name="Register"
-        component={Register}
+        name="Settings"
+        component={Setting}
         options={{
           tabBarLabel: "",
           tabBarIcon: ({ color, size }) => (
             <Image
-              source={require("../images/10.png")}
+              source={require("../images/9.png")}
               style={{ height: 20, width: 20 }}
             />
           ),
         }}
       />
+      
     </Tab.Navigator>
   );
 };
+
 
 const Stack = createStackNavigator();
 const screenOptionStyle = {
@@ -79,26 +104,11 @@ const screenOptionStyle = {
 const HomeStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Home" component={BottomTabNavigator} />
-      {/* <Stack.Screen name="Register" component={Register} />
-      <Stack.Screen name="Navigator" component={BottomTabNavigator} /> */}
+      <Stack.Screen name="Home" component={Login} />
+      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="Dashboard" component={DrawerNavigator} />
     </Stack.Navigator>
   );
 };
 
-const Drawer = createDrawerNavigator();
-
-const DrawerNavigator = () => {
-  return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={HomeStackNavigator} />
-      <Drawer.Screen name="Dashboard" component={Dashboard} />
-      <Drawer.Screen name="Login" component={Login} />
-      <Drawer.Screen name="Register" component={Register} />
-      <Drawer.Screen name="Wallet" component={Wallet} />
-      <Drawer.Screen name="Settings" component={Setting} />
-    </Drawer.Navigator>
-  );
-};
-
-export default DrawerNavigator;
+export default HomeStackNavigator;

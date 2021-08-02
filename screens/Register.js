@@ -37,7 +37,7 @@ function Register({ navigation }) {
     };
 
     axios
-      .post("https://kokofp-319805.wn.r.appspot.com/api/auth/sign-up", user)
+      .post("https://kokofpapi.herokuapp.com/api/auth/sign-in", user)
       .then((res) => {
         if (res.status === 200) {
           alert("You have successfully signed up");
