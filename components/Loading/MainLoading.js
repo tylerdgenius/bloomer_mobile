@@ -13,7 +13,7 @@ const MainLoading = () => {
         alignItems: "center",
       }}
     >
-      <Text style={{color: "white"}}>Logging in...</Text>
+      <Text style={{color: "white", marginBottom: 20}}>Loading...</Text>
       <ActivityIndicator size="large" color="white" />
     </View>
   );

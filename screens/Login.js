@@ -10,6 +10,8 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checked, setIsChecked] = useState(true);
+  const [error, setError] = useState(false);
+
 console.log(props.LoadingState)
   //Store Async Data
   // _storeData = async (data) => {
@@ -54,12 +56,14 @@ console.log(props.LoadingState)
         // await _storeData(data);
         props.navigation.push("Dashboard");
         props.LoadingState(false)
+        setError(false)
         // console.log(data)
       })
       .catch((res) => {
         props.LoadingState(false)
         alert("Cannot verify credentials. Please try logging in again")
         console.log(res);
+        setError(true)
       });
   }
 
@@ -78,7 +82,9 @@ console.log(props.LoadingState)
           onChangeText={(e) => setTextValue(e)}
           right={<TextInput.Icon name="mail" color="#8ac546" />}
           style={{ marginTop: 70, elevation: 25 }}
+          error={error}
         ></TextInput>
+
         <TextInput
           label="Password"
           mode="outlined"
@@ -93,9 +99,11 @@ console.log(props.LoadingState)
                 setIsChecked(!checked);
                 console.log("Eye Button Clicked");
               }}
+              
             />
           }
           style={{ marginTop: 30, elevation: 25 }}
+          error={error}
         ></TextInput>
         <Button
           mode="contained"
@@ -110,7 +118,7 @@ console.log(props.LoadingState)
         >
           Login
         </Button>
-        <View
+        {/* <View
           style={{
             flexDirection: "row",
             justifyContent: "center",
@@ -132,7 +140,7 @@ console.log(props.LoadingState)
             style={{ height: 50, width: "15%", marginHorizontal: 15 }}
             resizeMode="contain"
           />
-        </View>
+        </View> */}
         {/* <View
         style={{
           flexDirection: "row",
@@ -147,6 +155,14 @@ console.log(props.LoadingState)
           resizeMode="contain"
         /></TouchableOpacity>
         </View> */}
+        <Button
+        mode="text"
+        onPress={() => props.navigation.push("Register")}
+        style={{ marginTop: 30 }}
+      >
+        Register
+      </Button>
+
       </View>
     </SafeAreaView>
   );

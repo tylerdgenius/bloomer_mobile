@@ -107,10 +107,12 @@ const HomeStackNavigator = ({setLoadingState}) => {
   
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Home">{props => {return(
+      <Stack.Screen name="Login">{props => {return(
         <Login props={props} LoadingState={setLoadingState} navigation={props.navigation}/>
       )}}</Stack.Screen>
-      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="Register">{props => {return(
+        <Register props={props} LoadingState={setLoadingState} navigation={props.navigation}/>
+      )}}</Stack.Screen>
       <Stack.Screen name="Dashboard" component={Flat} />
       <Stack.Screen name="AddChild" component={AddChild} />
       <Stack.Screen name="ViewAllChildren" component={ViewAllChildren} />
