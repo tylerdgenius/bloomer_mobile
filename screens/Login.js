@@ -6,20 +6,20 @@ import { AsyncStorage } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const Login = ({ navigation }) => {
+const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checked, setIsChecked] = useState(true);
-
+console.log(props.LoadingState)
   //Store Async Data
-  _storeData = async (data) => {
-    try {
-      await AsyncStorage.setItem("TOKEN_KEY", data);
-    } catch (error) {
-      // Error saving data
-      console.log("Error saving Token");
-    }
-  };
+  // _storeData = async (data) => {
+  //   try {
+  //     await AsyncStorage.setItem("TOKEN_KEY", data);
+  //   } catch (error) {
+  //     // Error saving data
+  //     console.log("Error saving Token");
+  //   }
+  // };
 
   //Retrieve Async Data
 
@@ -34,6 +34,7 @@ const Login = ({ navigation }) => {
   }
 
   function loginUser(email, password) {
+    props.LoadingState(true)
     const user = {
       email: email,
       password: password,
@@ -50,11 +51,14 @@ const Login = ({ navigation }) => {
         }
       })
       .then(async (data) => {
-        await _storeData(data);
-        navigation.push("Dashboard");
+        // await _storeData(data);
+        props.navigation.push("Dashboard");
+        props.LoadingState(false)
         // console.log(data)
       })
       .catch((res) => {
+        props.LoadingState(false)
+        alert("Cannot verify credentials. Please try logging in again")
         console.log(res);
       });
   }
@@ -101,6 +105,7 @@ const Login = ({ navigation }) => {
             paddingVertical: 20,
             borderRadius: 20,
             elevation: 25,
+            color: "white"
           }}
         >
           Login

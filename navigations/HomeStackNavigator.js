@@ -9,12 +9,14 @@ import Dashboard from "../screens/Dashboard";
 import Wallet from "../screens/Wallet";
 import Setting from "../screens/Settings";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import AddChild from '../components/Child/AddChild'
+import ViewAllChildren from '../components/Child/ViewAllChildren'
 
 const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={BottomTabNavigator} />
+      <Drawer.Screen name="Home" component={Flat} />
       {/* <Drawer.Screen name="Dashboard" component={Dashboard} /> */}
       {/* <Drawer.Screen name="Login" component={Login} />
       <Drawer.Screen name="Register" component={Register} /> */}
@@ -101,12 +103,17 @@ const screenOptionStyle = {
   headerShown: false,
 };
 
-const HomeStackNavigator = () => {
+const HomeStackNavigator = ({setLoadingState}) => {
+  
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Home" component={Login} />
+      <Stack.Screen name="Home">{props => {return(
+        <Login props={props} LoadingState={setLoadingState} navigation={props.navigation}/>
+      )}}</Stack.Screen>
       <Stack.Screen name="Register" component={Register} />
-      <Stack.Screen name="Dashboard" component={DrawerNavigator} />
+      <Stack.Screen name="Dashboard" component={Flat} />
+      <Stack.Screen name="AddChild" component={AddChild} />
+      <Stack.Screen name="ViewAllChildren" component={ViewAllChildren} />
     </Stack.Navigator>
   );
 };

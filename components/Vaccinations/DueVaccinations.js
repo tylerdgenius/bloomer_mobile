@@ -43,11 +43,11 @@ const DueVaccinations = ({navigation}) => {
   return (
     <View style={styles.mainCont}>
       <Text style={styles.textHeading}>Next Due Vaccines</Text>
-      <View>
+      <View style={styles.flats}>
         <FlatList
           data={vaccinations}
           renderItem={renderItem}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.id.toString()}
           horizontal
           showsHorizontalScrollIndicator={false}
         />
@@ -76,9 +76,12 @@ const styles = StyleSheet.create({
   },
   mainCont: {
     backgroundColor: "#F5F5F5",
-    paddingBottom: 50,
+    // paddingBottom: 50,
     marginTop: 40,
   },
+  flats: {
+    marginBottom: 50,
+  }
 });
 
 export default DueVaccinations;

@@ -9,6 +9,7 @@ import useWindowDimensions from "react-native/Libraries/Utilities/useWindowDimen
 import CustomMenuBar from "./Bar/MenuBar";
 import ScheduleVaccination from "./Vaccinations/ScheduleVaccination";
 import DueVaccinations from "./Vaccinations/DueVaccinations";
+import ChildBar from "./Child/ChildBar";
 
 const height = useWindowDimensions.height;
 const width = useWindowDimensions.width;
@@ -39,14 +40,14 @@ const Flat = ({ navigation }) => {
           </View>
 
           <View style={{}}>
-            <RecentVaccination />
+            <ChildBar />
           </View>
 
           <View style={{}}>
             <RecentVaccination />
           </View>
 
-          <View style={{paddingTop: 70, paddingBottom: 70}}>
+          <View style={{ paddingTop: 70, paddingBottom: 70 }}>
             
           </View>
         </View>
