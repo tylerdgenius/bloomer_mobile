@@ -114,10 +114,8 @@ function Register(props) {
             paddingVertical: 20,
             borderRadius: 20,
             elevation: 25,
-            color: "white",
           }}
-        >
-          Register
+        ><Text style={{color: "white"}}>Register</Text>
         </Button>
 
         {/* <View

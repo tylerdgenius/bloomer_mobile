@@ -46,7 +46,7 @@ console.log(props.LoadingState)
       .post("https://kokofpapi.herokuapp.com/api/auth/sign-in", user)
       .then((res) => {
         if (res.status === 200) {
-          alert("You have successfully logged in");
+          // alert("You have successfully logged in");
           return res.data;
         } else if (res.status === 400) {
           console.log(res.data);
@@ -113,10 +113,9 @@ console.log(props.LoadingState)
             paddingVertical: 20,
             borderRadius: 20,
             elevation: 25,
-            color: "white"
           }}
-        >
-          Login
+        ><Text style={{color: "white"}}>Login</Text>
+          
         </Button>
         {/* <View
           style={{

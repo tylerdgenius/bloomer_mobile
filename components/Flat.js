@@ -10,46 +10,49 @@ import CustomMenuBar from "./Bar/MenuBar";
 import ScheduleVaccination from "./Vaccinations/ScheduleVaccination";
 import DueVaccinations from "./Vaccinations/DueVaccinations";
 import ChildBar from "./Child/ChildBar";
+import VaccinationArticleFlow from "./Articles/VaccinationArticleFlow";
 
 const height = useWindowDimensions.height;
 const width = useWindowDimensions.width;
 
 const Flat = ({ navigation }) => {
+
+
   return (
     <SafeAreaView>
-      <View style={{}}>
-        <CustomMenuBar />
+      {/* Custom Menu Bar */}
+      <View>
+        <CustomMenuBar navigation={navigation}/>
       </View>
-      <ScrollView style={{}}>
+      <ScrollView>
         <View style={styles.mainContainer}>
-          {/* First Section */}
-
-          {/* Second Section */}
-          <View style={{}}>
+          {/* To view the recent vaccinations */}
+          <View>
             <RecentVaccination />
           </View>
 
-          {/* Third Section */}
-          <View style={{}}>
+          {/* To render the ScheduleVaccination component */}
+          <View>
             <ScheduleVaccination />
           </View>
 
-          {/* Fourth Section */}
+          {/* To render the DueVaccinations component */}
           <View>
             <DueVaccinations />
           </View>
 
+          {/* To render the ChildBar component */}
           <View style={{}}>
             <ChildBar />
           </View>
 
+          { /* To render the Vaccinations Articles component */}
           <View style={{}}>
-            <RecentVaccination />
+            <VaccinationArticleFlow />
           </View>
 
-          <View style={{ paddingTop: 70, paddingBottom: 70 }}>
-            
-          </View>
+          {/* To render spacing at the bottom*/}
+          <View style={{ paddingTop: 50, paddingBottom: 50 }}></View>
         </View>
       </ScrollView>
     </SafeAreaView>

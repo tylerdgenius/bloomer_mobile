@@ -3,30 +3,40 @@ import { View, Image, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Text } from "react-native-paper";
 
-const RecentVaccination = ({navigation}) => {
+const RecentVaccination = ({ navigation }) => {
   return (
-    <View
-      style={styles.mainContainer}
-    >
-      <View style={{}}>
-        <Text style={{ fontSize: 35, color: "white", fontWeight: "bold" }}>
-          Recent Vaccinations
-        </Text>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Text style={{ fontSize: 120, color: "white", fontWeight: "bold" }}>
-            01
-          </Text>
-          <View>
-            <Text style={{ fontSize: 25, color: "white" }}>Vaccinations</Text>
-            <Text style={{ fontSize: 25, color: "white" }}>Completed</Text>
+    <View style={styles.mainContainer}>
+      <View style={styles.container}>
+        <View style={styles.firstText}>
+          <Text style={styles.mainFirstText}>Recent Vaccinations</Text>
+        </View>
+        <View>
+          <View style={styles.firstRowFlow}>
+            <Text style={styles.firstRowText}>01</Text>
+            <View style={styles.secondRowFlow}>
+              <Text style={styles.secondRowText}>Vaccinations</Text>
+              <Text style={styles.secondRowText}>Completed</Text>
+            </View>
           </View>
         </View>
       </View>
+
+      {/* Bottom Slip Part */}
       <View>
-        <Text style={{ fontSize: 20, color: "white", paddingRight: 20 }}>
-          Your baby received <Text>Baby Vaccinations </Text> on the
-          <Text>12th of June</Text>
-        </Text>
+        <View style={styles.bottomSlip}>
+          <Text
+            style={{
+              ...styles.bottomSlipText,
+              fontSize: 15,
+              color: "#a90056",
+              fontWeight: "bold",
+            }}
+          >
+            Your baby received{" "}
+            <Text style={styles.bottomSlipText}>Baby Vaccinations</Text> on the
+            <Text style={styles.bottomSlipText}> 12th of June</Text>
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -35,15 +45,57 @@ const RecentVaccination = ({navigation}) => {
 const styles = StyleSheet.create({
   mainContainer: {
     alignItems: "flex-start",
-        paddingLeft: 30,
-        marginHorizontal: 30,
-        paddingVertical: 20,
-        backgroundColor: "#e90388",
-        marginTop: 40,
-        elevation: 40,
-        borderRadius: 20,
-  }
+    marginHorizontal: 30,
+    paddingVertical: 20,
+    backgroundColor: "#e90388",
+    marginTop: 30,
+    elevation: 20,
+    borderRadius: 20,
+  },
 
+  firstText: {},
+
+  mainFirstText: {
+    fontSize: 22,
+    color: "white",
+    fontWeight: "bold",
+  },
+
+  firstRowFlow: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  secondRowFlow: {},
+
+  firstRowText: {
+    fontSize: 80,
+    color: "#FFCA28",
+    fontWeight: "bold",
+  },
+
+  secondRowText: {
+    fontSize: 20,
+    color: "white",
+    fontWeight: "100",
+  },
+
+  bottomSlip: {
+    backgroundColor: "#ff7fd8",
+    borderRadius: 15,
+    marginHorizontal: 20,
+    paddingHorizontal: 11,
+    paddingVertical: 7,
+  },
+
+  container: {
+    paddingHorizontal: 30,
+  },
+
+  bottomSlipText: {
+    fontWeight: "bold",
+    color: "white",
+  },
 });
 
 export default RecentVaccination;
