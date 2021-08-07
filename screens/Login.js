@@ -7,12 +7,12 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Login = (props) => {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checked, setIsChecked] = useState(true);
   const [error, setError] = useState(false);
 
-console.log(props.LoadingState)
   //Store Async Data
   // _storeData = async (data) => {
   //   try {
@@ -36,6 +36,7 @@ console.log(props.LoadingState)
   }
 
   function loginUser(email, password) {
+    
     props.LoadingState(true)
     const user = {
       email: email,
@@ -117,49 +118,20 @@ console.log(props.LoadingState)
         ><Text style={{color: "white"}}>Login</Text>
           
         </Button>
-        {/* <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            marginTop: 40,
-          }}
-        >
-          <Image
-            source={require("../assets/social/search.png")}
-            style={{ height: 50, width: "10%", marginHorizontal: 15 }}
-            resizeMode="contain"
-          />
-          <Image
-            source={require("../assets/social/facebook.png")}
-            style={{ height: 50, width: "10%", marginHorizontal: 15 }}
-            resizeMode="contain"
-          />
-          <Image
-            source={require("../assets/social/twitter.png")}
-            style={{ height: 50, width: "15%", marginHorizontal: 15 }}
-            resizeMode="contain"
-          />
-        </View> */}
-        {/* <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "center",
-          marginTop: 40,
-        }}
-      >
-       <TouchableOpacity onPress={() => console.log("Button Clicked")}>
-        <Image
-          source={require("../assets/fingerprint.png")}
-          style={{ height: 150, width: "40%" }}
-          resizeMode="contain"
-        /></TouchableOpacity>
-        </View> */}
+       
         <Button
         mode="text"
         onPress={() => props.navigation.push("Register")}
         style={{ marginTop: 30 }}
       >
         Register
+      </Button>
+      <Button
+        mode="text"
+        onPress={() => props.navigation.push("Dashboard")}
+        style={{ marginTop: 30 }}
+      >
+        Dashboard
       </Button>
 
       </View>

@@ -5,13 +5,13 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { Text } from "react-native-paper";
 
 const CustomMenuBar = (props) => {
-  let newColor = props.color
-  let navigation = props.navigation
+let newColor = props.color
+let navigation = props.navigation
 
   const walletBar = require("../../assets/bag.png");
   const menuBar = require("../../assets/menu.png")
   return (
-    <View style={{...styles.mainContainer, backgroundColor: newColor }}>
+    <View style={{ ...styles.mainContainer }}>
       {/* Wallet Bag and Text */}
       <View>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -29,13 +29,6 @@ const CustomMenuBar = (props) => {
             }}
           />
         </TouchableOpacity>
-            <Image
-              source={walletBar}
-              style={{ height: 20, width: "20%" }}
-              resizeMode="contain"
-            />
-          
-          <Text style={styles.firstSectionText}>N0.00</Text>
         </View>
       </View>
       {/* Name and Avatar */}
@@ -69,6 +62,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginLeft: 10,
+    color: "white"
   },
 });
 

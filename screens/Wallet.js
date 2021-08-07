@@ -1,139 +1,101 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Text } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
+import CustomMenuBar from "../components/Bar/MenuBarVariant";
 
-const Wallet = ({ navigation }) => {
+const Wallet = (props) => {
+  let navigation = props.navigation;
+
+  const ussdImg = require('../assets/ussd.png');
+  const transferImg = require('../assets/transfer.png');
+  const creditCardImg = require('../assets/creditcard.png');
   return (
-    <View
-      style={{
-        backgroundColor: "#FFF",
-        flex: 1,
-      }}
-    >
-      <View
-        style={{
-          backgroundColor: "#8ac546",
-          height: "35%",
-          borderBottomLeftRadius: 20,
-          borderBottomRightRadius: 20,
-          paddingHorizontal: 20,
-        }}
-      >
-        <TouchableOpacity
-          onPress={() => {
-            navigation.openDrawer();
-            console.log("Button Clicked");
-          }}
-        >
-          <Image
-            source={require("../images/1.png")}
-            style={{
-              height: 10,
-              width: 20,
-              marginTop: 50,
-            }}
-          />
-        </TouchableOpacity>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            marginTop: 25,
-            width: "100%",
-          }}
-        >
-          <View style={{ width: "50%" }}>
-            <Text
-              style={{
-                fontSize: 28,
-                color: "#FFF",
-                fontWeight: "bold",
-              }}
-            >
-              N0.00
-            </Text>
+    <View style={styles.mainContainer}>
+      <View style={styles.view01}>
+        <SafeAreaView style={{ flex: 1 }}>
+          <View>
+            <CustomMenuBar color="#8ac546" navigation={navigation} />
           </View>
-          <View style={{ width: "50%", alignItems: "flex-end" }}>
-            <Image
-              source={require("../images/g.png")}
-              style={{ height: 60, width: 60 }}
-            />
-          </View>
-        </View>
+          <View></View>
+        </SafeAreaView>
       </View>
-      <View>
-        <View>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontSize: 50,
-              width: "100%",
-              marginTop: 20,
-              marginHorizontal: 30,
-              letterSpacing: 0.01,
-            }}
-          >
-            How would you like to top up?
-          </Text>
-        </View>
-        <View>
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              elevation: 20,
-              backgroundColor: "white",
-              marginHorizontal: 30,
-              borderRadius: 20,
-              padding: 25,
-              marginTop: 25,
-            }}
-          >
-            {/* <Image /> */}
-            <Text style={{ fontSize: 20 }}>via USSD</Text>
+      <View style={styles.view02}>
+        <SafeAreaView style={{ flex: 1, flexWrap: "wrap" }}>
+          <View style={{ flex: 0.28 }}>
+            <Text style={styles.textHead}>How would you like to top up?</Text>
           </View>
-        </View>
-        <View>
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              elevation: 20,
-              backgroundColor: "white",
-              marginHorizontal: 30,
-              borderRadius: 20,
-              padding: 25,
-              marginTop: 25,
-            }}
-          >
-            {/* <Image /> */}
-            <Text style={{ fontSize: 20 }}>via Transfer</Text>
+          <View style={{ flex: 0.72 }}>
+            <TouchableOpacity style={styles.textBoxesContainer}>
+              <View style={styles.flexStuff} >
+                <Image source={ussdImg} style={{height: 10, width: 30}} />
+                <Text style={styles.textBoxes}>via USSD</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.textBoxesContainer}>
+              <View style={styles.flexStuff} >
+              <Image source={transferImg} style={{height: 10, width: 30}} />
+                <Text style={styles.textBoxes}>via Transfer</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.textBoxesContainer}>
+              <View style={styles.flexStuff}>
+                <Image source={creditCardImg} style={{height: 20, width: 30}} />
+                <Text style={styles.textBoxes}>via Credit/Debit Card</Text>
+              </View>
+            </TouchableOpacity>
           </View>
-        </View>
-        <View>
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "flex-start",
-              justifyContent: "flex-start",
-              elevation: 20,
-              backgroundColor: "white",
-              marginHorizontal: 30,
-              borderRadius: 20,
-              padding: 25,
-              marginTop: 25,
-            }}
-          >
-            {/* <Image /> */}
-            <Text style={{ fontSize: 20 }}>via Credit/Debit Card</Text>
-          </View>
-        </View>
+        </SafeAreaView>
       </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "white",
+  },
+
+  view01: {
+    flex: 0.5,
+    backgroundColor: "#8ac546",
+    borderBottomRightRadius: 30,
+    borderBottomLeftRadius: 30,
+  },
+
+  view02: {
+    flex: 0.5,
+    backgroundColor: "white",
+  },
+
+  textHead: {
+    fontSize: 40,
+    fontWeight: "bold",
+    marginHorizontal: 30,
+  },
+
+  textBoxesContainer: {
+    paddingVertical: 20,
+    paddingHorizontal: 30,
+    elevation: 20,
+    backgroundColor: "white",
+    marginHorizontal: 30,
+    marginVertical: 8,
+    borderRadius: 20,
+  },
+
+  textBoxes: {
+    fontSize: 20,
+    fontWeight: "100",
+  },
+
+  flexStuff: {
+    flexDirection: "row",
+    justifyContent: "center"
+  }
+
+});
 
 export default Wallet;

@@ -15,14 +15,14 @@ import VaccinationArticleFlow from "./Articles/VaccinationArticleFlow";
 const height = useWindowDimensions.height;
 const width = useWindowDimensions.width;
 
-const Flat = ({ navigation }) => {
-
+const Flat = (props) => {
+console.log(props)
 
   return (
     <SafeAreaView>
       {/* Custom Menu Bar */}
       <View>
-        <CustomMenuBar navigation={navigation}/>
+        <CustomMenuBar navigation={props.navigation} color="white"/>
       </View>
       <ScrollView>
         <View style={styles.mainContainer}>
