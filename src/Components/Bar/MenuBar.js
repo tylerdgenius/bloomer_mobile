@@ -1,21 +1,19 @@
-import { NavigationHelpersContext } from "@react-navigation/native";
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { Text } from "react-native-paper";
 
 const CustomMenuBar = (props) => {
-let newColor = props.color
-let navigation = props.navigation
+  let newColor = props.color
+  let navigation = props.navigation
 
   const walletBar = require("../../assets/bag.png");
   const menuBar = require("../../assets/menu.png")
   return (
-    <View style={{ ...styles.mainContainer }}>
+    <View style={{...styles.mainContainer, backgroundColor: newColor }}>
       {/* Wallet Bag and Text */}
       <View>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => {
             console.log("Button Clicked")
             navigation.toggleDrawer();
@@ -28,7 +26,14 @@ let navigation = props.navigation
               width: 20,
             }}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
+            <Image
+              source={walletBar}
+              style={{ height: 20, width: "20%" }}
+              resizeMode="contain"
+            />
+          
+          <Text style={styles.firstSectionText}>N0.00</Text>
         </View>
       </View>
       {/* Name and Avatar */}
@@ -56,13 +61,13 @@ const styles = StyleSheet.create({
     height: 70,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
+    elevation: 20
   },
 
   firstSectionText: {
     fontSize: 20,
     fontWeight: "bold",
     marginLeft: 10,
-    color: "white"
   },
 });
 

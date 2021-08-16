@@ -81,7 +81,7 @@ export default function Register(props) {
                   outlineColor="white"
 
                   onChangeText={e => setEmailValue(e)}
-                  right={<TextInput.Icon name="account" />}
+                  // right={<TextInput.Icon name="account" />}
                   style={{flex: 0.25, borderBottomRightRadius: 20}}
                   error={error} ></TextInput>
                   
@@ -91,7 +91,7 @@ export default function Register(props) {
                   mode="outlined"
                   outlineColor="white"
                   onChangeText={e => setEmailValue(e)}
-                  right={<TextInput.Icon name="account" />}
+                  // right={<TextInput.Icon name="account" />}
                   style={{flex: 0.25}}
                   error={error}></TextInput>
 
@@ -100,7 +100,7 @@ export default function Register(props) {
                   mode="outlined"
                   outlineColor="white"
                   onChangeText={e => setEmailValue(e)}
-                  right={<TextInput.Icon name="account" />}
+                  // right={<TextInput.Icon name="account" />}
                   style={{flex: 0.25}}
                   error={error}></TextInput>
 
@@ -110,16 +110,16 @@ export default function Register(props) {
                   outlineColor="white"
                   onChangeText={e => setPassValue(e)}
                   secureTextEntry={checked}
-                  right={
-                    <TextInput.Icon
-                      name="account"
-                      onPress={() => {
-                        setIsChecked(!checked);
-                        console.log('Eye Button Clickedr');
-                      }}
-                      error={error}
-                    />
-                  }
+                  // right={
+                  //   <TextInput.Icon
+                  //     name="account"
+                  //     onPress={() => {
+                  //       setIsChecked(!checked);
+                  //       console.log('Eye Button Clickedr');
+                  //     }}
+                  //     error={error}
+                  //   />
+                  // }
                   style={{flex: 0.25}}></TextInput>
               </View>
             </View>

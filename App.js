@@ -1,7 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import HomeStackNavigator from './navigation/HomeStackNavigator';
+import HomeStackNavigator from './src/Navigations/HomeStackNavs/HomeStackNavigator';
 import {
   configureFonts,
   DefaultTheme,

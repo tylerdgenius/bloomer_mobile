@@ -33,19 +33,21 @@ const AddChild = props => {
               mode="outlined"
               outlineColor="white"
               onChangeText={e => setChildName(e)}
-              right={<TextInput.Icon name="account" />}
+              // right={<TextInput.Icon name="account" />}
               style={{
                 flex: 0.25,
                 borderBottomRightRadius: 20,
                 marginTop: 10,
-              }}></TextInput>
+              }}>
+
+              </TextInput>
 
             <TextInput
               label="Location"
               mode="outlined"
               outlineColor="white"
               onChangeText={e => setEmailValue(e)}
-              right={<TextInput.Icon name="account" />}
+              // right={<TextInput.Icon name="account" />}
               style={{
                 flex: 0.25,
                 borderBottomRightRadius: 20,
@@ -57,7 +59,7 @@ const AddChild = props => {
               mode="outlined"
               outlineColor="white"
               onChangeText={e => setEmailValue(e)}
-              right={<TextInput.Icon name="account" />}
+              // right={<TextInput.Icon name="account" />}
               style={{
                 flex: 0.25,
                 borderBottomRightRadius: 20,
@@ -69,7 +71,7 @@ const AddChild = props => {
               mode="outlined"
               outlineColor="white"
               onChangeText={e => setEmailValue(e)}
-              right={<TextInput.Icon name="account" />}
+              // right={<TextInput.Icon name="account" />}
               style={{
                 flex: 0.25,
                 borderBottomRightRadius: 20,

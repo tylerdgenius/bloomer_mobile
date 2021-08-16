@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {View, Image, StyleSheet, TouchableOpacity, Modal} from 'react-native';
+import {View, Image, StyleSheet, TouchableOpacity, Modal, FlatList} from 'react-native';
 import {Text} from 'react-native-paper';
-import {FlatList} from 'react-native-gesture-handler';
 import SingleVaccinePage from './SingleVaccinePage'
 
 const DueVaccinations = ({navigation}) => {

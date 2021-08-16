@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Button, TextInput, Text} from 'react-native-paper';
-import DismissKeyboard from '../../components/Keyboard/DismissKeyboard';
 import axios from 'axios'
 
 const Login = props => {
@@ -88,7 +87,7 @@ const Login = props => {
               mode="outlined"
               outlineColor="white"
               onChangeText={e => setTextValue(e)}
-              right={<TextInput.Icon name="mail" color="#8ac546" />}
+              // right={<TextInput.Icon name="mail" color="#8ac546" />}
               style={{marginTop: 70}}
               error={error} ></TextInput>
               
@@ -99,16 +98,16 @@ const Login = props => {
               outlineColor="white"
               onChangeText={e => setPassValue(e)}
               secureTextEntry={checked}
-              right={
-                <TextInput.Icon
-                  name="eye"
-                  color="#8ac546"
-                  onPress={() => {
-                    setIsChecked(!checked);
-                    console.log('Eye Button Clicked');
-                  }}
-                />
-              }
+              // right={
+              //   <TextInput.Icon
+              //     name="eye"
+              //     color="#8ac546"
+              //     onPress={() => {
+              //       setIsChecked(!checked);
+              //       console.log('Eye Button Clicked');
+              //     }}
+              //   />
+              // }
               style={{marginTop: 30, elevation: 25}}
               error={error}></TextInput>
           </View>
