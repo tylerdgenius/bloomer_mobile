@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Text } from "react-native-paper";
-import { ScrollView } from "react-native-gesture-handler";
-import { SafeAreaView } from "react-native-safe-area-context";
 import RecentVaccination from "../Vaccinations/RecentVaccination";
 import useWindowDimensions from "react-native/Libraries/Utilities/useWindowDimensions";
 import CustomMenuBar from "../Bar/MenuBar";
@@ -12,11 +10,13 @@ import DueVaccinations from "../Vaccinations/DueVaccinations";
 import ChildBar from "../Child/ChildBar";
 import VaccinationArticleFlow from "../Articles/VaccinationArticleFlow";
 
+
 const height = useWindowDimensions.height;
 const width = useWindowDimensions.width;
 
+
+
 const Dashboard = (props) => {
-console.log(props)
 
   return (
     <SafeAreaView>

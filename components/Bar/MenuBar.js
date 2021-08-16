@@ -1,7 +1,5 @@
-// import { NavigationHelpersContext } from "@react-navigation/native";
 import React from "react";
 import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
-// import { TouchableOpacity } from "react-native-gesture-handler";
 import { Text } from "react-native-paper";
 
 const CustomMenuBar = (props) => {
